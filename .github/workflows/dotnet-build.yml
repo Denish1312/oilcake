@@ -2,6 +2,8 @@ name: .NET Build and Publish
 
 on:
   push:
+    branches:
+      - main
     tags:
       - 'v*'
 
@@ -31,5 +33,5 @@ jobs:
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: DairyManagement-Windows-${{ github.ref_name }}
+        name: DairyManagement-Windows-${{ github.ref_name }}-b${{ github.run_number }}
         path: ./publish/win-x64/
