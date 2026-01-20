@@ -1,0 +1,23 @@
+# .NET Core
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.user
+*.suo
+*.sln.docstates
+
+# Database
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Admin Tools (Security)
+DairyManagementSystem/AdminTools/
+DairyManagementSystem/AdminTools/client_registry.csv
+
+# OS files
+.DS_Store
+Thumbs.db
