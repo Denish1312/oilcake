@@ -31,5 +31,5 @@ jobs:
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: DairyManagement-Windows-v1.1.0
+        name: DairyManagement-Windows-${{ github.ref_name }}
         path: ./publish/win-x64/
