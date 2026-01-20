@@ -15,7 +15,7 @@ namespace DairyManagement.UI;
 /// <summary>
 /// Interaction logic for App.xaml
 /// </summary>
-public partial class App : Application
+public partial class App : System.Windows.Application
 {
     private ServiceProvider? _serviceProvider;
     private IConfiguration? _configuration;
@@ -153,7 +153,7 @@ public partial class App : Application
         
         if (source == "AppDomain") 
         {
-            Application.Current.Shutdown();
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

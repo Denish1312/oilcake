@@ -1,6 +1,7 @@
 using System.Windows.Input;
 using DairyManagement.UI.Commands;
 using DairyManagement.UI.Services;
+using DairyManagement.Application.Interfaces;
 
 namespace DairyManagement.UI.ViewModels;
 
