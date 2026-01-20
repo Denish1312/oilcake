@@ -46,9 +46,12 @@ public partial class App : System.Windows.Application
 
         var services = new ServiceCollection();
 
-        // Configuration
-        var connectionString = _configuration.GetConnectionString("DefaultConnection") 
-            ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+        // Configuration - Move database to AppData for persistence
+        var appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DairyManagementSystem");
+        if (!Directory.Exists(appDataPath)) Directory.CreateDirectory(appDataPath);
+        
+        var dbPath = Path.Combine(appDataPath, "dairy_management.db");
+        var connectionString = $"Data Source={dbPath}";
 
         // Database
         services.AddDbContext<DairyDbContext>(options =>
