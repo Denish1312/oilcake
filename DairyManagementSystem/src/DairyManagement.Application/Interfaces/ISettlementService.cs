@@ -41,4 +41,14 @@ public interface ISettlementService
     /// Previews settlement calculation without creating it
     /// </summary>
     Task<SettlementDto> PreviewSettlementAsync(int cycleId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Records an advance payment for a customer cycle
+    /// </summary>
+    Task RecordAdvancePaymentAsync(int customerId, int cycleId, decimal amount, string username);
+
+    /// <summary>
+    /// Gets settlements within a date range
+    /// </summary>
+    Task<IEnumerable<SettlementDto>> GetSettlementsByDateRangeAsync(DateTime startDate, DateTime endDate, CancellationToken cancellationToken = default);
 }

@@ -190,6 +190,12 @@ public class SettlementService : ISettlementService
         await _unitOfWork.SaveChangesAsync();
     }
 
+    public async Task<IEnumerable<SettlementDto>> GetSettlementsByDateRangeAsync(DateTime startDate, DateTime endDate, CancellationToken cancellationToken = default)
+    {
+        var settlements = await _unitOfWork.Settlements.GetSettlementsByDateRangeAsync(startDate, endDate, cancellationToken);
+        return settlements.Select(MapToDto);
+    }
+
     private static SettlementDto MapToDto(Settlement settlement)
     {
         return new SettlementDto

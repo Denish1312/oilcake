@@ -78,7 +78,17 @@ public class MilkCycleListViewModel : BaseViewModel
             ClearError();
 
             var cycles = await _milkCycleService.GetAllCyclesAsync(ShowUnsettledOnly);
-            MilkCycles = new ObservableCollection<MilkCycleDto>(cycles);
+            MilkCycles = new ObservableCollection<MilkCycleDto>(cycles.Select(c => new MilkCycleDto
+            {
+                MilkCycleId = c.CycleId,
+                CustomerId = c.CustomerId,
+                CustomerName = c.CustomerName,
+                StartDate = c.CycleStartDate,
+                EndDate = c.CycleEndDate,
+                TotalMilkAmount = c.TotalMilkAmount,
+                IsSettled = c.IsSettled,
+                SettlementDate = c.SettlementDate
+            }));
         }
         catch (Exception ex)
         {
