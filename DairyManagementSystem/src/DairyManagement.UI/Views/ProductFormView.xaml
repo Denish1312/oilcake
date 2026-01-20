@@ -1,0 +1,69 @@
+<UserControl x:Class="DairyManagement.UI.Views.ProductFormView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid Background="{StaticResource BackgroundBrush}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Border Style="{StaticResource Card}" MaxWidth="600" Margin="20">
+                <StackPanel>
+                    <TextBlock Text="{Binding FormTitle}" FontSize="28" FontWeight="Bold" 
+                              Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,20"/>
+
+                    <!-- Product Code -->
+                    <Label Content="Product Code *"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Text="{Binding ProductCode, UpdateSourceTrigger=PropertyChanged}" 
+                                Margin="0,0,10,0"/>
+                        <Button Grid.Column="1" Content="Generate" Style="{StaticResource SecondaryButton}" 
+                               Command="{Binding GenerateCodeCommand}" Padding="12,8"/>
+                    </Grid>
+
+                    <!-- Product Name -->
+                    <Label Content="Product Name *" Margin="0,15,0,0"/>
+                    <TextBox Text="{Binding ProductName, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <!-- Description -->
+                    <Label Content="Description" Margin="0,15,0,0"/>
+                    <TextBox Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" 
+                            Height="60" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+                    <!-- Unit of Measure -->
+                    <Label Content="Unit of Measure *" Margin="0,15,0,0"/>
+                    <ComboBox ItemsSource="{Binding AvailableUnits}" 
+                             SelectedItem="{Binding UnitOfMeasure}"/>
+
+                    <!-- Unit Price -->
+                    <Label Content="Unit Price (₹) *" Margin="0,15,0,0"/>
+                    <TextBox Text="{Binding UnitPrice, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <!-- Reorder Level -->
+                    <Label Content="Reorder Level" Margin="0,15,0,0"/>
+                    <TextBox Text="{Binding ReorderLevel, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <!-- Error Message -->
+                    <TextBlock Text="{Binding ErrorMessage}" Foreground="{StaticResource ErrorBrush}" 
+                              Margin="0,15,0,0" TextWrapping="Wrap"
+                              Visibility="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
+
+                    <!-- Buttons -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                        <Button Content="Cancel" Style="{StaticResource SecondaryButton}" 
+                               Command="{Binding CancelCommand}" Width="100" Margin="0,0,10,0"/>
+                        <Button Content="Save" Style="{StaticResource PrimaryButton}" 
+                               Command="{Binding SaveCommand}" Width="100"/>
+                    </StackPanel>
+
+                    <TextBlock Text="Saving..." HorizontalAlignment="Center" Margin="0,10,0,0"
+                              Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

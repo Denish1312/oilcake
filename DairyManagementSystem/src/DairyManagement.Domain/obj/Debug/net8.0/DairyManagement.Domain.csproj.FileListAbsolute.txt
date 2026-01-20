@@ -1,0 +1,11 @@
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Domain/bin/Debug/net8.0/DairyManagement.Domain.deps.json
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Domain/bin/Debug/net8.0/DairyManagement.Domain.dll
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Domain/bin/Debug/net8.0/DairyManagement.Domain.pdb
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Domain/obj/Debug/net8.0/DairyManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Domain/obj/Debug/net8.0/DairyManagement.Domain.AssemblyInfoInputs.cache
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Domain/obj/Debug/net8.0/DairyManagement.Domain.AssemblyInfo.cs
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Domain/obj/Debug/net8.0/DairyManagement.Domain.csproj.CoreCompileInputs.cache
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Domain/obj/Debug/net8.0/DairyManagement.Domain.dll
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Domain/obj/Debug/net8.0/refint/DairyManagement.Domain.dll
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Domain/obj/Debug/net8.0/DairyManagement.Domain.pdb
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Domain/obj/Debug/net8.0/ref/DairyManagement.Domain.dll

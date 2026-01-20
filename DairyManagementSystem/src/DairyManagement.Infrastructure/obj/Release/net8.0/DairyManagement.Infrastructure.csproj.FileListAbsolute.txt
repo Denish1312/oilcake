@@ -1,0 +1,17 @@
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/obj/Release/net8.0/DairyManagement.Infrastructure.csproj.AssemblyReference.cache
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/obj/Release/net8.0/DairyManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/obj/Release/net8.0/DairyManagement.Infrastructure.AssemblyInfoInputs.cache
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/obj/Release/net8.0/DairyManagement.Infrastructure.AssemblyInfo.cs
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/obj/Release/net8.0/DairyManagement.Infrastructure.csproj.CoreCompileInputs.cache
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/bin/Release/net8.0/DairyManagement.Infrastructure.deps.json
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/bin/Release/net8.0/DairyManagement.Infrastructure.runtimeconfig.json
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/bin/Release/net8.0/DairyManagement.Infrastructure.dll
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/bin/Release/net8.0/DairyManagement.Infrastructure.pdb
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/bin/Release/net8.0/DairyManagement.Domain.dll
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/bin/Release/net8.0/DairyManagement.Domain.pdb
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/obj/Release/net8.0/DairyManagement.Infrastructure.csproj.CopyComplete
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/obj/Release/net8.0/DairyManagement.Infrastructure.dll
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/obj/Release/net8.0/refint/DairyManagement.Infrastructure.dll
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/obj/Release/net8.0/DairyManagement.Infrastructure.pdb
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/obj/Release/net8.0/DairyManagement.Infrastructure.genruntimeconfig.cache
+/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Infrastructure/obj/Release/net8.0/ref/DairyManagement.Infrastructure.dll

@@ -1,0 +1,96 @@
+<UserControl x:Class="DairyManagement.UI.Views.CustomerListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000">
+    <Grid Background="{StaticResource BackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Page Title -->
+        <TextBlock Grid.Row="0" Text="Customer Management" FontSize="32" FontWeight="Bold" 
+                  Foreground="{StaticResource TextPrimaryBrush}" Margin="20,20,20,10"/>
+
+        <!-- Toolbar -->
+        <Border Grid.Row="1" Background="White" Padding="20,10" Margin="20,0,20,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Add Button -->
+                <Button Grid.Column="0" Content="➕ Add Customer" Style="{StaticResource PrimaryButton}" 
+                       Command="{Binding AddCustomerCommand}" Margin="0,0,10,0"/>
+
+                <!-- Search Box -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="10,0">
+                    <TextBox Width="300" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
+                            VerticalContentAlignment="Center" Margin="0,0,10,0">
+                        <TextBox.InputBindings>
+                            <KeyBinding Key="Enter" Command="{Binding SearchCommand}"/>
+                        </TextBox.InputBindings>
+                    </TextBox>
+                    <Button Content="🔍 Search" Style="{StaticResource SecondaryButton}" 
+                           Command="{Binding SearchCommand}"/>
+                </StackPanel>
+
+                <!-- Filter Checkbox -->
+                <CheckBox Grid.Column="2" Content="Active Only" IsChecked="{Binding ShowActiveOnly}" 
+                         VerticalAlignment="Center" Margin="10,0"/>
+
+                <!-- Refresh Button -->
+                <Button Grid.Column="3" Content="🔄 Refresh" Style="{StaticResource SecondaryButton}" 
+                       Command="{Binding LoadCustomersCommand}" Margin="10,0,0,0"/>
+            </Grid>
+        </Border>
+
+        <!-- Customer DataGrid -->
+        <Border Grid.Row="2" Background="White" Margin="20,0,20,20" Padding="10">
+            <Grid>
+                <DataGrid ItemsSource="{Binding Customers}" 
+                         SelectedItem="{Binding SelectedCustomer}"
+                         AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Code" Binding="{Binding CustomerCode}" Width="100"/>
+                        <DataGridTextColumn Header="Full Name" Binding="{Binding FullName}" Width="*"/>
+                        <DataGridTextColumn Header="Phone" Binding="{Binding PhoneNumber}" Width="120"/>
+                        <DataGridTextColumn Header="Village" Binding="{Binding Village}" Width="150"/>
+                        <DataGridTextColumn Header="Status" Binding="{Binding IsActive, Converter={StaticResource BoolToActiveConverter}}" Width="80"/>
+                        <DataGridTemplateColumn Header="Actions" Width="200">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="Edit" Style="{StaticResource SecondaryButton}" 
+                                               Command="{Binding DataContext.EditCustomerCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                               Padding="8,4" Margin="0,0,5,0"/>
+                                        <Button Content="Activate" Style="{StaticResource PrimaryButton}" 
+                                               Command="{Binding DataContext.ActivateCustomerCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                               Padding="8,4" Margin="0,0,5,0"
+                                               Visibility="{Binding IsActive, Converter={StaticResource InverseBoolToVisibilityConverter}}"/>
+                                        <Button Content="Deactivate" Style="{StaticResource SecondaryButton}" 
+                                               Command="{Binding DataContext.DeactivateCustomerCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                               Padding="8,4"
+                                               Visibility="{Binding IsActive, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <!-- Loading Overlay -->
+                <Border Background="#80FFFFFF" Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <TextBlock Text="Loading..." FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

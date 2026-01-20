@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "+4SD5UumMrQKQS/QqomrY+H4q4STeZtHBynop8e3G2vmrv5p19mjVfQQtUPq3REAX658a5YPGg8J4uvYbBuoCQ==",
+  "success": true,
+  "projectFilePath": "/home/denish/Desktop/oilcake/DairyManagementSystem/src/DairyManagement.Domain/DairyManagement.Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/denish/.nuget/packages/microsoft.net.illink.tasks/8.0.22/microsoft.net.illink.tasks.8.0.22.nupkg.sha512",
+    "/home/denish/.nuget/packages/microsoft.netcore.app.runtime.win-x64/8.0.22/microsoft.netcore.app.runtime.win-x64.8.0.22.nupkg.sha512",
+    "/home/denish/.nuget/packages/microsoft.aspnetcore.app.runtime.win-x64/8.0.22/microsoft.aspnetcore.app.runtime.win-x64.8.0.22.nupkg.sha512",
+    "/home/denish/.nuget/packages/microsoft.netcore.app.crossgen2.linux-x64/8.0.22/microsoft.netcore.app.crossgen2.linux-x64.8.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}
